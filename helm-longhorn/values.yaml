@@ -1,0 +1,7 @@
+longhorn:
+  preUpgradeChecker:
+    jobEnabled: false
+    upgradeVersionCheck: false
+  service:
+    ui:
+      type: LoadBalancer
