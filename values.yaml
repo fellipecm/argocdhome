@@ -4,3 +4,9 @@ spec:
   source:
     repoURL: https://github.com/fellipecm/argocdhome
     targetRevision: develop
+stacks:
+  - name: kured
+  - name: metallb
+  # - name: ingress-nginx # using traefik that comes with k3s
+  - name: longhorn
+  - name: kube-prometheus-stack
