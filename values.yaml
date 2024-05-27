@@ -3,7 +3,7 @@ spec:
     server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/fellipecm/argocdhome
-    targetRevision: develop
+    targetRevision: main
 stacks:
   - name: kured
   - name: metallb
