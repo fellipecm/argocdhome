@@ -1,0 +1,15 @@
+kube-prometheus-stack:
+  grafana:
+    ingress:
+      enabled: true
+      ingressClassName: traefik
+      hosts:
+        - grafana.fellipecm.local
+  prometheus:
+    ingress:
+      enabled: true
+      ingressClassName: traefik
+      hosts:
+        - prometheus.fellipecm.local
+  prometheus-node-exporter:
+    hostNetwork: false

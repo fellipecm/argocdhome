@@ -1,0 +1,11 @@
+longhorn:
+  preUpgradeChecker:
+    jobEnabled: false
+    upgradeVersionCheck: false
+  ingress:
+    enabled: true
+    host: longhorn.fellipecm.local
+    ingressClassName: traefik
+  # service:
+  #   ui:
+  #     type: LoadBalancer

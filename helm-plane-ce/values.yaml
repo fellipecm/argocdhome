@@ -1,0 +1,6 @@
+plane-ce:
+  ingress:
+    appHost: 'plane.fellipecm.home'
+    minioHost: 'plane-minio.fellipecm.home'
+    ingressClass: 'traefik'
+    clientMaxBodySize: 10m
