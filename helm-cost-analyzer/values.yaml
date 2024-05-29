@@ -1,8 +1,6 @@
 cost-analyzer:
   persistentVolume:
     enabled: false
-    size: 2Gi
-    dbSize: 2.0Gi
   global:
     prometheus:
       enabled: false
@@ -11,5 +9,3 @@ cost-analyzer:
       enabled: false
       domainName: kube-prometheus-stack-prometheus.kube-prometheus-stack-grafana
       proxy: false
-  # kubecostAggregator:
-  #   deployMethod: statefulset
