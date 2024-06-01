@@ -10,4 +10,4 @@ stacks:
   # - name: ingress-nginx # using traefik that comes with k3s
   - name: longhorn
   - name: kube-prometheus-stack
-  # - name: cost-analyzer
+  - name: kestra

@@ -1,0 +1,129 @@
+kestra:
+  ### Image
+  image:
+    image: kestra/kestra
+    tag: latest-full
+    pullPolicy: Always
+
+  ### Configurations for deployments
+  configuration: {}
+
+
+  ### Secrets for deployments
+  secrets: {}
+
+  ### Load configuration from existing secret
+  externalSecret: {}
+    #secretName: secret-name
+    #key: key-inside-the-secret.yml
+
+  ### configuration files
+  configurationPath:
+
+  ### Deployments
+  deployments:
+    webserver:
+      enabled: true
+      kind: Deployment
+      replicaCount: 1
+      command: "server webserver"
+      labels: {}
+      annotations: {}
+      resources: {}
+      nodeSelector: {}
+      tolerations: []
+      affinity: {}
+      strategy: {}
+      podSecurityContext: {}
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      extraContainers: []
+      extraEnv: []
+      autoscaler:
+        enabled: false
+        minReplicas: 1
+        maxReplicas: 3
+        extra: {}
+        metrics: []
+        #  - type: Resource
+        #    resource:
+        #      name: cpu
+        #      target:
+        #        type: Utilization
+        #        averageUtilization: 50
+        #  - type: Resource
+        #    resource:
+        #      name: memory
+        #      target:
+        #        type: AverageValue
+        #        averageValue: 100Mi
+
+  # for io.kestra.core.tasks.scripts.Bash task or io.kestra.plugin.scripts.*, attach a docker dind container in order to isolate in a container
+  # every command launch
+  dind:
+    enabled: true
+
+  ### Kafka
+  kafka:
+    enabled: false
+
+  ### ElasticSearch
+  elasticsearch:
+    enabled: false
+
+  ### Minio
+  minio:
+    enabled: true
+    rootUser: please-change-me
+    rootPassword: its-not-a-secret
+    mode: standalone
+    persistence:
+      size: 4Gi
+    buckets:
+      - name: kestra
+        policy: none
+        purge: false
+    resources:
+      requests:
+        memory: 512Mi
+
+  ### Postgresql
+  postgresql:
+    enabled: true
+    auth:
+      database: kestra
+      username: kestra
+      password: kestra
+
+    primary:
+      persistence:
+        enabled: true
+        size: 2Gi
+
+  ### Ingress
+  ingress:
+    enabled: true
+    className: "traefik"
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: kestra.fellipecm.local
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls: []
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
+
+  # https://kestra.io/docs/administrator-guide/configuration/others#kestravariablesenv-vars-prefix
+  extraConfigMapEnvFrom:
+    # - name: my-existing-configmap-no-prefix
+    # - name: my-existing-configmap-with-prefix
+    #   prefix: KESTRA_
+
+  extraSecretEnvFrom:
+    # - name: my-existing-no-prefix
+    # - name: my-existing-with-prefix
+    #   prefix: SECRET_
