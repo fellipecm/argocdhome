@@ -72,12 +72,6 @@ kestra:
     resources: {}
     args:
       - --log-level=fatal
-      - --group=1000
-    securityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
-    extraVolumeMounts: []
-    extraEnv: []
 
   ### Kafka
   kafka:
