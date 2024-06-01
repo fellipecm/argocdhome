@@ -58,10 +58,26 @@ kestra:
         #        type: AverageValue
         #        averageValue: 100Mi
 
+
   # for io.kestra.core.tasks.scripts.Bash task or io.kestra.plugin.scripts.*, attach a docker dind container in order to isolate in a container
   # every command launch
   dind:
     enabled: true
+    image:
+      image: docker
+      tag: dind
+      pullPolicy: IfNotPresent
+    socketPath: /dind/
+    tmpPath: /tmp/
+    resources: {}
+    args:
+      - --log-level=fatal
+      - --group=1000
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+    extraVolumeMounts: []
+    extraEnv: []
 
   ### Kafka
   kafka:
