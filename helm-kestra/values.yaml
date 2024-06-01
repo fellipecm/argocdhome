@@ -72,7 +72,13 @@ kestra:
     resources: {}
     args:
       - --log-level=fatal
+    securityContext:
+      runAsUser: 0
+      runAsGroup: 0
 
+  securityContext:
+    runAsUser: 0
+    runAsGroup: 0
   ### Kafka
   kafka:
     enabled: false
