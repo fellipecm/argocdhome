@@ -1,7 +1,6 @@
 kube-vip:
-
   config:
-    address: "192.168.0.250"
+    address: "192.168.0.230"
   # Check https://kube-vip.io/docs/installation/flags/
   env:
     vip_interface: "eth0"
@@ -10,6 +9,6 @@ kube-vip:
     lb_port: "6443"
     vip_cidr: "32"
     cp_enable: "true"
-    svc_enable: "true"
-    svc_election: "true"
-    vip_leaderelection: "false"
+    svc_enable: "false"
+    svc_election: "false"
+    vip_leaderelection: "true"
