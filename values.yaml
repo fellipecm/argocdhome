@@ -7,8 +7,8 @@ spec:
 stacks:
   - name: kured
   - name: metallb
-  - name: kube-vip
+  # - name: kube-vip
   # - name: ingress-nginx # using traefik that comes with k3s
   - name: longhorn
   - name: kube-prometheus-stack
-  - name: kestra
+  # - name: kestra
