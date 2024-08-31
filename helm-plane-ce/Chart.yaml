@@ -3,5 +3,5 @@ name: plane-ce
 version: 1.0.15
 dependencies:
 - name: plane-ce
-  version: 1.0.21
+  version: 1.0.22
   repository: https://helm.plane.so
