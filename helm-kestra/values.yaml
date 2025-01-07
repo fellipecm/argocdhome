@@ -124,7 +124,7 @@ kestra:
       # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
     hosts:
-      - host: kestra.fellipecm.local
+      - host: kestra.fellipecm.home
         paths:
           - path: /
             pathType: ImplementationSpecific

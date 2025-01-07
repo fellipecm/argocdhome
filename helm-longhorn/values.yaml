@@ -4,7 +4,7 @@ longhorn:
     upgradeVersionCheck: false
   ingress:
     enabled: true
-    host: longhorn.fellipecm.local
+    host: longhorn.fellipecm.home
     ingressClassName: traefik
   # service:
   #   ui:

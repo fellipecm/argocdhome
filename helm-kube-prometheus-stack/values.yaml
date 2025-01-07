@@ -4,12 +4,12 @@ kube-prometheus-stack:
       enabled: true
       ingressClassName: traefik
       hosts:
-        - grafana.fellipecm.local
+        - grafana.fellipecm.home
   prometheus:
     ingress:
       enabled: true
       ingressClassName: traefik
       hosts:
-        - prometheus.fellipecm.local
+        - prometheus.fellipecm.home
   prometheus-node-exporter:
     hostNetwork: false
